@@ -1,22 +1,21 @@
 package com.panaderia.Ale.service;
 
 import com.panaderia.Ale.entity.Sucursal;
-import com.panaderia.Ale.repository.SucursalRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
-@Service
-public class SucursalService {
+import java.util.List;
 
-    @Autowired
-    private SucursalRepository sucursalRepository;
+public interface SucursalService {
 
-    public Sucursal guardarSucursal(Sucursal request){
-        return sucursalRepository.save(request);
-    }
+    public Sucursal guardarSucursal(Sucursal request);
 
-    public Sucursal obtenerSucursal(Long id){
-        return sucursalRepository.findById(id).get();
-    }
+    public Sucursal obtenerSucursal(@PathVariable Long id);
+
+    public Sucursal actualizarSucursal(Sucursal request);
+
+    public List<Sucursal> obtenerTodasLasSucursales();
+
+    public Sucursal eliminarSucursal(@PathVariable Long id);
+
 
 }
