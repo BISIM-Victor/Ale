@@ -9,5 +9,6 @@ public interface UsuarioService {
     public Usuario guardarUsuario(Usuario request);
     public List<Usuario> obtenerTodosLosUsuarios();
     public Usuario actualizarUsuario(Usuario request);
+    public Usuario obtenerUsuarioPorId(Long id);
 
 }

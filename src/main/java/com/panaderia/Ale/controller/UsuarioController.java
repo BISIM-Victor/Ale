@@ -24,6 +24,12 @@ public class UsuarioController {
         return usuarioService.obtenerTodosLosUsuarios();
     }
 
+
+    @GetMapping("/{id}")
+    public Usuario obtenerUsuarioPorId(@PathVariable Long id) {
+        return usuarioService.obtenerUsuarioPorId(id);
+    }
+
     @PutMapping("/update")
     public Usuario actualizarUsuario(@RequestBody Usuario request) {
         return usuarioService.actualizarUsuario(request);

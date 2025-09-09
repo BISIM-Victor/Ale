@@ -22,6 +22,21 @@ public class PerfilServiceImpl implements PerfilService {
     @Override
     public List<Perfil> listarPerfiles() {
         return perfilRepository.findAll();
-
     }
+
+    @Override
+    public Perfil obtenerPerfilPorId(Long id) {
+        return perfilRepository.findById(id).get();
+    }
+
+    @Override
+    public Perfil elimanarPerfil(Long id) {
+        Perfil perfil = perfilRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("no se encontro el id "));
+
+        perfilRepository.delete(perfil);
+        return perfil;
+    }
+
+
 }

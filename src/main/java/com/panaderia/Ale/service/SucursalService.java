@@ -9,13 +9,13 @@ public interface SucursalService {
 
     public Sucursal guardarSucursal(Sucursal request);
 
-    public Sucursal obtenerSucursal(@PathVariable Long id);
+    public Sucursal obtenerSucursal(Long id);
 
     public Sucursal actualizarSucursal(Sucursal request);
 
     public List<Sucursal> obtenerTodasLasSucursales();
 
-    public Sucursal eliminarSucursal(@PathVariable Long id);
+    public Sucursal eliminarSucursal(Long id);
 
 
 }
