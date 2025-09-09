@@ -24,5 +24,17 @@ public class PerfilController {
         return perfilService.listarPerfiles();
     }
 
+    @GetMapping("/{id}")
+    public Perfil obtenerPerfilPorId(@PathVariable Long id) {
+        return perfilService.obtenerPerfilPorId(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public  Perfil eliminaPerfil(@PathVariable Long id){
+        return perfilService.elimanarPerfil(id);
+    }
+
+
+
 
 }
